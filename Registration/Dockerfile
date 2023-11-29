@@ -13,11 +13,11 @@ RUN pip install -r requirements.txt
 # Copy the application code into the container
 COPY . .
 
-# Expose the port the Flask application will be listening on
+# Expose the port the Django application will be listening on
 EXPOSE 8000
 
 # Set environment variables, if necessary
 # ENV MY_ENV_VAR=value
 
-# Run the Flask application
+# Run the application
 CMD ["python", "manage.py", "runserver", "8000"]
