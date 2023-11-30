@@ -1,5 +1,11 @@
 # Base image
-FROM python:3.8
+FROM python:3-alpine
+# FROM python:3.8
+
+
+# add ENV (PYTHONUNBUFFERED = 1) to show every loggs in you terminal
+ENV PYTHONUNBUFFERED=1
+
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -20,4 +26,4 @@ EXPOSE 8000
 # ENV MY_ENV_VAR=value
 
 # Run the application
-CMD ["python", "manage.py", "runserver", "8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
